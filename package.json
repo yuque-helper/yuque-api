@@ -7,7 +7,7 @@
     "example": "example"
   },
   "scripts": {
-    "test": "npm run test"
+    "test": "ts-node ./test/repo.ts"
   },
   "repository": {
     "type": "git",

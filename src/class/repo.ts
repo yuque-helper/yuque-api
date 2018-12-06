@@ -1,18 +1,20 @@
-import {RepoOption} from '../interface';
+import Request from '../services/index';
 
 class Repo {
-  readonly token: string;
-  readonly url?: string;
+  readonly request: Request;
   readonly key: string;
 
-  constructor(token: string, option: RepoOption){
-    this.token = token;
-    this.url = option.url;
-    this.key = option.key;
+  constructor(key: string, request: Request){
+    this.key = key;
+    this.request = request;
   }
 
   toc(){
+    return this.request.toc(this.key);
+  }
 
+  doc(key: string){
+    return this.request.doc(this.key, key);
   }
 
 }
