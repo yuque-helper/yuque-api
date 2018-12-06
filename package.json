@@ -1,0 +1,28 @@
+{
+  "name": "yuque-api",
+  "version": "0.0.1",
+  "description": "yuque nodejs api",
+  "main": "dist/index.js",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "test": "npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cctv1005s/yuque-api.git"
+  },
+  "keywords": [
+    "nodejs",
+    "yuque",
+    "alibaba",
+    "api"
+  ],
+  "author": "cctv1005s",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cctv1005s/yuque-api/issues"
+  },
+  "homepage": "https://github.com/cctv1005s/yuque-api#readme"
+}
