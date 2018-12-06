@@ -3,9 +3,9 @@
     "outDir": "./dist",
     "lib": ["es2016", "dom"],
     "sourceMap": false,
-    "allowJs": true,
+    "allowJs": false,
     "moduleResolution": "node",
-    "rootDir": "./src",
+    "rootDir": "./",
     "forceConsistentCasingInFileNames": true,
     "allowSyntheticDefaultImports": true,
     "noImplicitReturns": true,
@@ -15,8 +15,12 @@
     "suppressImplicitAnyIndexErrors": true,
     "noUnusedLocals": true,
     "target": "es5",
+    "declaration": true,
     "typeRoots" : ["./src/*", "./node_modules/**/*"]
   },
+  "include": [
+    "./src"
+  ],
   "exclude": [
     "node_modules",
     "dist"

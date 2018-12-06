@@ -2,12 +2,13 @@
   "name": "yuque-api",
   "version": "0.0.1",
   "description": "yuque nodejs api",
-  "main": "dist/index.js",
+  "main": "dist/src/index.js",
   "directories": {
     "example": "example"
   },
   "scripts": {
-    "test": "ts-node ./test/repo.ts"
+    "test": "ts-node ./test/repo.ts",
+    "prepublish": "tsc"
   },
   "repository": {
     "type": "git",
