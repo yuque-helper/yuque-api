@@ -8,7 +8,7 @@ class Request {
   readonly parser: (d: any) => any;
 
   constructor(url: string, token: string){
-    this.url = url;
+    this.url = url + '/api/v2';
     this.token = token;
     this.request = request;
     this.headers = {
@@ -24,7 +24,7 @@ class Request {
    * @param key namespace 或者是 id
    */
   async toc(key: string){
-    return this.request.get(`/repos/${key}/toc`).set(this.headers).then(this.parser);
+    return this.request.get(`${this.url}/repos/${key}/toc`).set(this.headers).then(this.parser);
   }
 
   /**
@@ -32,11 +32,11 @@ class Request {
    * @param key slug 或者是 id
    */
   async doc(reposKey:string, docKey: string){
-    return this.request(`/repos/${reposKey}/docs/${docKey}`).set(this.headers).then(this.parser);
+    return this.request(`${this.url}/repos/${reposKey}/docs/${docKey}`).set(this.headers).then(this.parser);
   }
 
   async repo(key: string){
-    return this.request.get(`/repos/${key}`).set(this.headers).then(this.parser);
+    return this.request.get(`${this.url}/repos/${key}`).set(this.headers).then(this.parser);
   }
 };
 
