@@ -1,6 +1,6 @@
 {
   "name": "yuque-api",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "yuque nodejs api",
   "main": "dist/src/index.js",
   "directories": {
