@@ -39,6 +39,10 @@ class Request {
   async doc(reposKey:string, docKey: string){
     return this.request(`/repos/${reposKey}/docs/${docKey}`);
   }
+
+  async repo(key: string){
+    return this.request.get(`/repos/${key}`);
+  }
 };
 
 export default Request;

@@ -17,6 +17,10 @@ class Repo {
     return this.request.doc(this.key, key);
   }
 
+  detail(){
+    return this.request.repo(this.key);
+  }
+
 }
 
 export default Repo;

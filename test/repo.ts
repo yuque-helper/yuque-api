@@ -9,6 +9,11 @@ if(!token){
 
 const yuque = new Yuque(token || '');
 
+const getDetail = async () => {
+  const detail = await yuque.repo('yuque/developer').detail();
+  console.log('detail ===>', detail);
+}
+
 const getToc = async () => {
   const toc = await yuque.repo('yuque/developer').toc();
 
@@ -27,4 +32,6 @@ const getDoc = async () => {
   console.log(doc);
 }
 
+
+getDetail();
 getDoc();
