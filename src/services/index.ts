@@ -4,24 +4,19 @@ class Request {
   readonly url:string;
   readonly token: string;
   readonly request: any;
+  readonly headers: any;
+  readonly parser: (d: any) => any;
 
   constructor(url: string, token: string){
     this.url = url;
     this.token = token;
     this.request = request;
-    const self = this;
-
-    const OrigRequest = this.request.Request;
-
-    this.request.Request = function RequestWithPrefix (method:string, url:string) {
-      const req = new OrigRequest(method, self.url + '/api/v2' + url).set({
-        'User-Agent': 'app-name',
-        'X-Auth-Token': token,
-        'Content-Type': 'application/x-www-form-urlencoded'
-      }).then((d:any) => d.body);
-
-      return req;
-    }    
+    this.headers = {
+      'User-Agent': 'app-name',
+      'X-Auth-Token': token,
+      'Content-Type': 'application/x-www-form-urlencoded'
+    };
+    this.parser = (d:any) => d.body;
   }
 
   /**
@@ -29,7 +24,7 @@ class Request {
    * @param key namespace 或者是 id
    */
   async toc(key: string){
-    return this.request.get(`/repos/${key}/toc`);
+    return this.request.get(`/repos/${key}/toc`).set(this.headers).then(this.parser);
   }
 
   /**
@@ -37,11 +32,11 @@ class Request {
    * @param key slug 或者是 id
    */
   async doc(reposKey:string, docKey: string){
-    return this.request(`/repos/${reposKey}/docs/${docKey}`);
+    return this.request(`/repos/${reposKey}/docs/${docKey}`).set(this.headers).then(this.parser);
   }
 
   async repo(key: string){
-    return this.request.get(`/repos/${key}`);
+    return this.request.get(`/repos/${key}`).set(this.headers).then(this.parser);
   }
 };
 
