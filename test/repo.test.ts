@@ -27,6 +27,11 @@ if(!token){
 
 const yuque = new Yuque(token || '');
 
+test('hello', async () => {
+  const hello = await yuque.hello();
+  expect(hello.data).toHaveProperty('message');
+});
+
 test("should get detail 获取文档信息", async () => {
   const detail = await yuque.repo('yuque/developer').detail();
   expect(detail).toHaveProperty('abilities');

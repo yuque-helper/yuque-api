@@ -24,6 +24,10 @@ class Yuque{
   repo(key: string){
     return new Repo(key, this.request);
   }
+
+  hello(){
+    return this.request.hello();
+  }
   
 }
 
