@@ -7,7 +7,7 @@
     "example": "example"
   },
   "scripts": {
-    "test": "ts-node ./test/repo.ts",
+    "test": "jest",
     "prepublish": "tsc"
   },
   "repository": {
@@ -29,5 +29,11 @@
   "dependencies": {
     "@types/superagent": "^3.8.5",
     "superagent": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^23.3.12",
+    "jest": "^23.6.0",
+    "ts-jest": "^23.10.5",
+    "typescript": "^3.2.2"
   }
 }

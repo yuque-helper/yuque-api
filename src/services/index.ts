@@ -31,7 +31,7 @@ class Request {
    * 
    * @param key slug 或者是 id
    */
-  async doc(reposKey:string, docKey: string){
+  async doc(reposKey:string, docKey: string = ''){
     return this.request(`${this.url}/repos/${reposKey}/docs/${docKey}`).set(this.headers).then(this.parser);
   }
 
