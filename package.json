@@ -27,13 +27,17 @@
   },
   "homepage": "https://github.com/cctv1005s/yuque-api#readme",
   "dependencies": {
-    "@types/superagent": "^3.8.5",
     "superagent": "^4.0.0"
   },
+  "pre-commit": [
+    "test"
+  ],
   "devDependencies": {
     "@types/jest": "^23.3.12",
     "jest": "^23.6.0",
+    "pre-commit": "^1.2.2",
     "ts-jest": "^23.10.5",
+    "@types/superagent": "^3.8.5",
     "typescript": "^3.2.2"
   }
 }
