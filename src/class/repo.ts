@@ -1,8 +1,8 @@
 import Request from '../services/index';
 
 class Repo {
-  readonly request: Request;
-  readonly key: string;
+  private request: Request;
+  private key: string;
 
   constructor(key: string, request: Request){
     this.key = key;

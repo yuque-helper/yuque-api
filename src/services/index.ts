@@ -1,4 +1,6 @@
-import * as request from 'superagent';
+// import * as request from 'superagent';
+import axios from 'axios';
+
 
 class Request {
   readonly url:string;
@@ -15,11 +17,10 @@ class Request {
       'X-Auth-Token': token,
       'Content-Type': 'application/x-www-form-urlencoded'
     };
-    this.parser = (d:any) => d.body;
     this.client = {};
 
-    ['get', 'post', 'delete', 'put'].forEach(method => {
-      this.client[method] = (url: string) => request(method, `${this.url}${url}`).set(this.headers).then(this.parser);
+    ['get', 'post', 'delete', 'put'].forEach((method) => {
+      this.client[method] = (url: string, options: any) => axios[method](`${this.url}${url}`, {headers: this.headers, ...options}).then((d:any) => d.data);
     });
   }
 
@@ -45,6 +46,22 @@ class Request {
 
   async hello(){
     return this.client.get('/hello');
+  }
+
+  async user(key: string){
+    return this.client.get(`/users/${key}`);
+  }
+
+  async self(){
+    return this.client.get('/user');
+  }
+
+  async userDocs(query?: string, offset?: number){
+    return this.client.get('/user/docs', {data: {query, offset}});
+  }
+
+  async recentUpdated(type?: string, offset?: number){
+    return this.client.get('/user/recent-updated', {data: {type, offset}});
   }
 };
 
