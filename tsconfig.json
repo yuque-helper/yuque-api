@@ -16,7 +16,8 @@
     "noUnusedLocals": true,
     "target": "es5",
     "declaration": true,
-    "typeRoots" : ["./src/*", "./node_modules/**/*"]
+    "typeRoots" : ["./src/*", "./node_modules/**/*"],
+    "types": ["node"]
   },
   "include": [
     "./src"

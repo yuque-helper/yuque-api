@@ -8,7 +8,8 @@
   },
   "scripts": {
     "test": "jest",
-    "prepublish": "tsc"
+    "prepublish": "tsc",
+    "doc": "typedoc --out document ./src --module Yuque"
   },
   "repository": {
     "type": "git",
@@ -27,17 +28,19 @@
   },
   "homepage": "https://github.com/cctv1005s/yuque-api#readme",
   "dependencies": {
-    "superagent": "^4.0.0"
+    "axios": "^0.18.0"
   },
   "pre-commit": [
     "test"
   ],
   "devDependencies": {
+    "@types/axios": "^0.14.0",
     "@types/jest": "^23.3.12",
+    "@types/node": "^10.12.18",
     "jest": "^23.6.0",
     "pre-commit": "^1.2.2",
     "ts-jest": "^23.10.5",
-    "@types/superagent": "^3.8.5",
+    "typedoc": "^0.14.1",
     "typescript": "^3.2.2"
   }
 }
