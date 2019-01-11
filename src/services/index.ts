@@ -57,11 +57,11 @@ class Request {
   }
 
   async userDocs(query?: string, offset?: number){
-    return this.client.get('/user/docs', {data: {query, offset}});
+    return this.client.get('/user/docs', {params: {query, offset}});
   }
 
   async recentUpdated(type?: string, offset?: number){
-    return this.client.get('/user/recent-updated', {data: {type, offset}});
+    return this.client.get('/user/recent-updated', {params: {type, offset}});
   }
 };
 
