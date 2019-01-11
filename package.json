@@ -8,7 +8,8 @@
   },
   "scripts": {
     "test": "jest",
-    "prepublish": "tsc"
+    "prepublish": "tsc",
+    "doc": "typedoc --out document ./src --module Yuque"
   },
   "repository": {
     "type": "git",
@@ -39,6 +40,7 @@
     "jest": "^23.6.0",
     "pre-commit": "^1.2.2",
     "ts-jest": "^23.10.5",
+    "typedoc": "^0.14.1",
     "typescript": "^3.2.2"
   }
 }

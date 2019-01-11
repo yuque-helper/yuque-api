@@ -9,7 +9,7 @@ const urlReg = /^http[s]?:\/\/.+\.com$/;
 class Yuque{
   readonly token: string;
   readonly url: string;
-  readonly request: Request;
+  private request: Request;
   readonly user: User;
 
   constructor(token: string, option: YuqueOption = {}){
